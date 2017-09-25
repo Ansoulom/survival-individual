@@ -39,6 +39,8 @@ public class InstantiatedAudioPlayer : MonoBehaviour
         _source.pitch = Random.Range(minPitch, maxPitch);
         _started = true;
         _source.Play();
+
+        ShowText(AudioTextLoader.GetAudioDescription(clip.Name), position);
     }
 
 
@@ -49,14 +51,21 @@ public class InstantiatedAudioPlayer : MonoBehaviour
         instance.transform.position = position;
         var audioPlayer = instance.GetComponent<InstantiatedAudioPlayer>();
         audioPlayer.PlayClip(clip, position, minVolume, maxVolume, minPitch, maxPitch);
-
-        // TODO: Create better solution
-        GameObject.Find("CC").GetComponent<Text>().text = AudioTextLoader.GetAudioDescription(clip.Name);
+        
     }
 
 
     public static void PlaySound(AudioClipData clipData, Vector3 position)
     {
         PlaySound(clipData.Clip, position, clipData.MinVolume, clipData.MaxVolume, clipData.MinPitch, clipData.MaxPitch);
+    }
+
+
+    private void ShowText(string text, Vector3 worldPosition)
+    {
+        var canvas = GameObject.Find("Canvas");
+        var instance = Instantiate(Resources.Load("Prefabs/SoundText", typeof(GameObject)), canvas.transform) as GameObject;
+        instance.GetComponent<Text>().text = text;
+        instance.GetComponent<ScreenPositioner>().WorldPosition = worldPosition;
     }
 }
