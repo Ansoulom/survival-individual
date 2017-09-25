@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Body hit
   m_EditorClassIdentifier: 
   Clip: {fileID: 8300000, guid: 40b29c41a038a3b47a821c7105a5494d, type: 3}
-  Description: Splatting sound
+  Name: Hit

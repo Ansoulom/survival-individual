@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(AudioSource))]
@@ -28,7 +29,7 @@ public class InstantiatedAudioPlayer : MonoBehaviour
 	}
 
 
-    private void PlayClip(DescribedAudioClip clip, Vector3 position, float minVolume, float maxVolume,
+    private void PlayClip(NamedAudioClip clip, Vector3 position, float minVolume, float maxVolume,
         float minPitch, float maxPitch)
     {
         transform.position = position;
@@ -41,13 +42,16 @@ public class InstantiatedAudioPlayer : MonoBehaviour
     }
 
 
-    public static void PlaySound(DescribedAudioClip clip, Vector3 position, float minVolume, float maxVolume,
+    public static void PlaySound(NamedAudioClip clip, Vector3 position, float minVolume, float maxVolume,
         float minPitch, float maxPitch)
     {
         var instance = Instantiate(Resources.Load("Prefabs/AudioPlayer", typeof(GameObject))) as GameObject;
         instance.transform.position = position;
         var audioPlayer = instance.GetComponent<InstantiatedAudioPlayer>();
         audioPlayer.PlayClip(clip, position, minVolume, maxVolume, minPitch, maxPitch);
+
+        // TODO: Create better solution
+        GameObject.Find("CC").GetComponent<Text>().text = AudioTextLoader.GetAudioDescription(clip.Name);
     }
 
 

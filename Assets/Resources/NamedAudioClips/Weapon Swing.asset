@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f245b7bcf3f60c45a2b7a364039a7ca, type: 3}
-  m_Name: Pickup
+  m_Name: Weapon Swing
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: b5f7314fae1476f4eb824d3e59e2d20b, type: 3}
-  Description: '[Insert pickup sound description here]'
+  Clip: {fileID: 8300000, guid: 86f313480c1109e4dbc5f55624eac267, type: 3}
+  Name: Weapon swing

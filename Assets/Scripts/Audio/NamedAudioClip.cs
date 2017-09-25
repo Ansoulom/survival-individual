@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Sound/Described Audio Clip")]
-public class DescribedAudioClip : ScriptableObject
+public class NamedAudioClip : ScriptableObject
 {
     public AudioClip Clip;
-    public string Description;
+    public string Name;
 }
