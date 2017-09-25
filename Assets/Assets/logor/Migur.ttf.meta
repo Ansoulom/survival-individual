@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 44aac5d5b179e6548a0aa9231e02d6d7
+timeCreated: 1505845819
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Migur
+  fontNames:
+  - Migur
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

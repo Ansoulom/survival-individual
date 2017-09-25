@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68eecd5028b9e142b0ca4aa7e4aa608, type: 3}
+  m_Name: Water Bucket
+  m_EditorClassIdentifier: 
+  Name: Water Bucket
+  Icon: {fileID: 21300000, guid: c87ba72ab59153546896b2121fbc3409, type: 3}
+  CreatesItem: {fileID: 11400000, guid: 79a50aed94ba6f442a3f720e4f7255b1, type: 2}
