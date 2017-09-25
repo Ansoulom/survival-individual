@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114190350455759516}
   - component: {fileID: 114682858705756200}
   - component: {fileID: 114500372950232614}
+  - component: {fileID: 114409734662451370}
   m_Layer: 5
   m_Name: SoundText
   m_TagString: Untagged
@@ -64,6 +65,18 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: This is a decently long text that is decently long and now it is even more
     long
+--- !u!114 &114409734662451370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427763810168224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc69b8c13cd51c4e8455da7699524a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToDie: 0
 --- !u!114 &114500372950232614
 MonoBehaviour:
   m_ObjectHideFlags: 1

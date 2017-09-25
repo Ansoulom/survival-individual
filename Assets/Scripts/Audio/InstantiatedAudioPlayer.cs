@@ -40,7 +40,7 @@ public class InstantiatedAudioPlayer : MonoBehaviour
         _started = true;
         _source.Play();
 
-        ShowText(AudioTextLoader.GetAudioDescription(clip.Name), position);
+        ShowText(AudioTextLoader.GetAudioDescription(clip.Name), position, clip.Clip.length);
     }
 
 
@@ -61,11 +61,12 @@ public class InstantiatedAudioPlayer : MonoBehaviour
     }
 
 
-    private void ShowText(string text, Vector3 worldPosition)
+    private void ShowText(string text, Vector3 worldPosition, float showTime)
     {
         var canvas = GameObject.Find("Canvas");
         var instance = Instantiate(Resources.Load("Prefabs/SoundText", typeof(GameObject)), canvas.transform) as GameObject;
         instance.GetComponent<Text>().text = text;
         instance.GetComponent<ScreenPositioner>().WorldPosition = worldPosition;
+        instance.GetComponent<TimedObjectRemover>().TimeToDie = showTime;
     }
 }
