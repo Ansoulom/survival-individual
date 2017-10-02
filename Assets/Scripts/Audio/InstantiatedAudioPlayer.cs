@@ -51,7 +51,6 @@ public class InstantiatedAudioPlayer : MonoBehaviour
         instance.transform.position = position;
         var audioPlayer = instance.GetComponent<InstantiatedAudioPlayer>();
         audioPlayer.PlayClip(clip, position, minVolume, maxVolume, minPitch, maxPitch);
-        
     }
 
 

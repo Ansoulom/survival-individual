@@ -53,6 +53,7 @@ public class ZombieInput : CharacterInput
             if (distance < AggroRange)
             {
                 _aggro = true;
+                InstantiatedAudioPlayer.PlaySound(GetComponents<AudioClipData>()[2], transform.position);
             }
         }
     }

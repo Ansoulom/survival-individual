@@ -1,5 +1,6 @@
 {
-	"Hit": "Hit test thing",
-	"Pickup": "Testing pickup",
-	"Weapon swing": "Fnudelpapp"
+	"Hit": "Body getting hit",
+	"Pickup": "Bell chiming",
+  "Weapon swing": "Slashing through air",
+  "Zombie growl":  "Zombie growling" 
 }
