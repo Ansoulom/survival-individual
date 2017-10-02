@@ -1,41 +1,29 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading;
+﻿using System.IO;
 using SimpleJSON;
 
 public class AudioTextLoader
 {
-    private static List<JSONNode> _descriptionList;
-    private static JSONNode _selectedList;
-    private const string FilePathName = "Assets/Resources/SoundDescriptions";
+    private const string FilePathName = "Assets/Resources/SoundDescriptions.json";
+    private static JSONNode _descriptions;
+    private static JSONNode _selectedDescriptions;
 
 
     public static string GetAudioDescription(string soundName)
     {
-        if (_descriptionList == null)
-        {
+        if (_selectedDescriptions == null)
             LoadDescriptions();
-        }
 
-        var text = _selectedList[soundName];
-        return text;
+        return _selectedDescriptions[soundName].Value;
     }
 
 
     private static void LoadDescriptions()
     {
-        _descriptionList = new List<JSONNode>();
-        var filePath = new DirectoryInfo(FilePathName);
-        var fileInfo = filePath.GetFiles("*.json", SearchOption.AllDirectories);
-
-        foreach (var file in fileInfo)
-        {
-            var reader = file.OpenText();
-            var text = reader.ReadToEnd();
-            var list = JSON.Parse(text);
-            _descriptionList.Add(list);
-            reader.Close();
-        }
-        _selectedList = _descriptionList[0];
+        var reader = File.OpenText(FilePathName);
+        var text = reader.ReadToEnd();
+        var list = JSON.Parse(text);
+        _descriptions = list["Lists"];
+        _selectedDescriptions = list["Selected"];
+        reader.Close();
     }
 }

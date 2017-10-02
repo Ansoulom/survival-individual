@@ -1,0 +1,28 @@
+{
+	"Lists":
+	{
+		"Hit":
+		[
+			"Body getting hit"
+		],
+		"Pickup":
+		[
+			"Bell chiming"
+		],
+		"Weapon swing":
+		[
+			"Slashing through air"
+		],
+		"Zombie growl":
+		[
+			"Zombie growling"
+		]
+	},
+	"Selected":
+	{
+		"Hit": "Body getting hit",
+		"Pickup": "Bell chiming",
+		"Weapon swing": "Slashing through air",
+		"Zombie growl":  "Zombie growling"
+	}
+}
