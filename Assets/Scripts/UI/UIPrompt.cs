@@ -16,6 +16,7 @@ public class UIPrompt : MonoBehaviour
         _activeTimer = new Timer(PromptTime);
 	}
 	
+
 	// Update is called once per frame
 	private void Update ()
     {
@@ -23,7 +24,7 @@ public class UIPrompt : MonoBehaviour
         {
             GetComponent<Text>().text = "";
         }
-	}
+    }
 
 
     public void Activate()

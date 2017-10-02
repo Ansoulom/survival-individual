@@ -26,4 +26,14 @@ public class AudioTextLoader
         _selectedDescriptions = list["Selected"];
         reader.Close();
     }
+
+
+    private static void SaveDescriptions()
+    {
+        var node = new JSONObject();
+        node["Lists"] = _descriptions;
+        node["Selected"] = _selectedDescriptions;
+        string text = node;
+        File.WriteAllText(FilePathName, text);
+    }
 }
