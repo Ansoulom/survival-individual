@@ -142,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -959.2, y: 577}
+  m_AnchoredPosition: {x: -962, y: 477}
   m_SizeDelta: {x: 162.5, y: 75.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64980870
@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 327000594}
   - component: {fileID: 327000593}
   - component: {fileID: 327000592}
+  - component: {fileID: 327000596}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -413,6 +414,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &327000596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327000591}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
 --- !u!224 &381374846 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224416691178264824, guid: a32d8be6f4b07e446ab16e70c4997df4,
@@ -473,7 +487,7 @@ Prefab:
     - target: {fileID: 224416691178264824, guid: a32d8be6f4b07e446ab16e70c4997df4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.01078
       objectReference: {fileID: 0}
     - target: {fileID: 224416691178264824, guid: a32d8be6f4b07e446ab16e70c4997df4,
         type: 2}
@@ -483,7 +497,7 @@ Prefab:
     - target: {fileID: 224416691178264824, guid: a32d8be6f4b07e446ab16e70c4997df4,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 1276
+      value: 1079.9
       objectReference: {fileID: 0}
     - target: {fileID: 224416691178264824, guid: a32d8be6f4b07e446ab16e70c4997df4,
         type: 2}
@@ -592,6 +606,11 @@ Prefab:
     - target: {fileID: 224807377749679394, guid: a32d8be6f4b07e446ab16e70c4997df4,
         type: 2}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224886573279491050, guid: a32d8be6f4b07e446ab16e70c4997df4,
+        type: 2}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -754,6 +773,7 @@ GameObject:
   - component: {fileID: 1615695486}
   - component: {fileID: 1615695488}
   - component: {fileID: 1615695487}
+  - component: {fileID: 1615695489}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -813,3 +833,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1615695485}
+--- !u!114 &1615695489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1615695485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0

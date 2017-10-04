@@ -1,9 +1,10 @@
 ﻿using System.IO;
 using SimpleJSON;
+using UnityEngine;
 
 public class AudioTextLoader
 {
-    private const string FilePathName = "Assets/Resources/SoundDescriptions.json";
+    private static readonly string FilePathName = Application.dataPath + "/StreamingAssets/SoundDescriptions.json";
     private static JSONNode _descriptions;
     private static JSONNode _selectedDescriptions;
     private static JSONNode _base;
@@ -74,7 +75,6 @@ public class AudioTextLoader
 
     private static void SaveDescriptions()
     {
-        // THIS SHIT IS BROKEN STAY AWAY
         _base["Lists"] = _descriptions;
         _base["Selected"] = _selectedDescriptions;
         var text = _base.ToString();
