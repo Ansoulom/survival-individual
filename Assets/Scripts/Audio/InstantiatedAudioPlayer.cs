@@ -40,7 +40,7 @@ public class InstantiatedAudioPlayer : MonoBehaviour
         _started = true;
         _source.Play();
 
-        ShowText(AudioTextLoader.GetAudioDescription(clip.Name), position, clip.Clip.length);
+        ShowText(AudioTextLoader.GetSelectedDescription(clip.Name), position, clip.Clip.length);
     }
 
 

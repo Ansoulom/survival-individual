@@ -20,7 +20,7 @@ public class SoundSettingMenuItem : MonoBehaviour
     private void UpdateUi()
     {
         transform.Find("Name").GetComponent<Text>().text = Clip.Name;
-        transform.Find("Current").GetComponent<Text>().text = AudioTextLoader.GetAudioDescription(Clip.Name);
+        transform.Find("Current").GetComponent<Text>().text = AudioTextLoader.GetSelectedDescription(Clip.Name);
     }
 
 

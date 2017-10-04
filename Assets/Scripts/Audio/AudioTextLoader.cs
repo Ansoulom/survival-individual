@@ -8,12 +8,18 @@ public class AudioTextLoader
     private static JSONNode _selectedDescriptions;
 
 
-    public static string GetAudioDescription(string soundName)
+    public static string GetSelectedDescription(string soundName)
     {
         if (_selectedDescriptions == null)
             LoadDescriptions();
 
         return _selectedDescriptions[soundName].Value;
+    }
+
+
+    public static void SetSelectedDescription(string soundName, string value)
+    {
+        _selectedDescriptions[soundName] = value;
     }
 
 
@@ -35,5 +41,21 @@ public class AudioTextLoader
         node["Selected"] = _selectedDescriptions;
         string text = node;
         File.WriteAllText(FilePathName, text);
+    }
+
+
+    public static string[] GetDescriptions(string soundName)
+    {
+        if(_descriptions == null)
+            LoadDescriptions();
+
+        var array = _descriptions[soundName].AsArray;
+        var stringArray = new string[array.Count];
+        for (var i = 0; i < array.Count; ++i)
+        {
+            stringArray[i] = array[i].Value;
+        }
+
+        return stringArray;
     }
 }
