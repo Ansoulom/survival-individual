@@ -5,6 +5,8 @@ public class SoundSettingMenuItem : MonoBehaviour
 {
     public NamedAudioClip Clip;
     public AudioSource AudioSource;
+    public GameObject DescriptionsMenuPrefab;
+    public GameObject SoundSettingMenu;
 
 	// Use this for initialization
 	private void Start ()
@@ -12,10 +14,12 @@ public class SoundSettingMenuItem : MonoBehaviour
         UpdateUi();
     }
 	
+
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
 
     private void UpdateUi()
     {
@@ -33,6 +37,9 @@ public class SoundSettingMenuItem : MonoBehaviour
 
     public void GoToDescriptionMenu()
     {
-        
+        var instance = Instantiate(DescriptionsMenuPrefab, GameObject.Find("Canvas").transform);
+        instance.GetComponent<SoundDescriptionsMenu>().Clip = Clip;
+        SoundSettingMenu.SetActive(false);
+        instance.GetComponent<SoundDescriptionsMenu>().SoundSettingMenu = SoundSettingMenu;
     }
 }

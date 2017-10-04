@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1775061494430154
 GameObject:
   m_ObjectHideFlags: 1
@@ -292,6 +292,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 729ff62a1ee066845913e62e85093415, type: 2}
   MenuItemPrefab: {fileID: 1446667970734152, guid: 12518017c08b5c94e8171ddf378c18fd,
     type: 2}
+  SoundSettingMenu: {fileID: 0}
 --- !u!114 &114330196675849422
 MonoBehaviour:
   m_ObjectHideFlags: 1

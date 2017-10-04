@@ -6,6 +6,7 @@ public class AudioTextLoader
     private const string FilePathName = "Assets/Resources/SoundDescriptions.json";
     private static JSONNode _descriptions;
     private static JSONNode _selectedDescriptions;
+    private static JSONNode _base;
 
 
     public static string GetSelectedDescription(string soundName)
@@ -20,6 +21,7 @@ public class AudioTextLoader
     public static void SetSelectedDescription(string soundName, string value)
     {
         _selectedDescriptions[soundName] = value;
+        SaveDescriptions();
     }
 
 
@@ -27,19 +29,55 @@ public class AudioTextLoader
     {
         var reader = File.OpenText(FilePathName);
         var text = reader.ReadToEnd();
-        var list = JSON.Parse(text);
-        _descriptions = list["Lists"];
-        _selectedDescriptions = list["Selected"];
+        _base = JSON.Parse(text);
+        _descriptions = _base["Lists"];
+        _selectedDescriptions = _base["Selected"];
         reader.Close();
+    }
+
+
+    public static void RemoveDescription(string name, string desc)
+    {
+        for (var i = 0; i < _descriptions[name].Count; ++i)
+        {
+            if (desc.Equals(_descriptions[name][i].Value))
+            {
+
+                _descriptions[name].Remove(i);
+                break;
+            }
+        }
+        SaveDescriptions();
+    }
+
+
+    public static void ChangeDescription(string name, string oldDesc, string newDesc)
+    {
+        if (string.IsNullOrEmpty(newDesc)) return;
+        if (string.IsNullOrEmpty(oldDesc))
+        {
+            _descriptions[name].Add(newDesc);
+            return;
+        }
+        for (var i = 0; i < _descriptions[name].Count; ++i)
+        {
+            if (oldDesc.Equals(_descriptions[name][i].Value))
+            {
+                _descriptions[name][i] = newDesc;
+                break;
+            }
+        }
+        //if(!succeeded)_descriptions[name].Add(newDesc);
+        SaveDescriptions();
     }
 
 
     private static void SaveDescriptions()
     {
-        var node = new JSONObject();
-        node["Lists"] = _descriptions;
-        node["Selected"] = _selectedDescriptions;
-        string text = node;
+        // THIS SHIT IS BROKEN STAY AWAY
+        _base["Lists"] = _descriptions;
+        _base["Selected"] = _selectedDescriptions;
+        var text = _base.ToString();
         File.WriteAllText(FilePathName, text);
     }
 
